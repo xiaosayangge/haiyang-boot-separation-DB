@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hy.mapper.ActivityMapper">
+	<resultMap id="activity" type="com.hy.model.Activity" />
+
+	<sql id="activity_all_field">
+		id,
+		activity_name activityName,
+		copy_writing copyWriting,
+		line_seq lineSeq,
+		activity_type activityType,
+		rt_activity_type rtActivityType,
+		activity_rule activityRule,
+		activity_content activityContent,
+		activity_channel activityChannel,
+		schedule_no scheduleNo,
+		start_time
+		startTime,
+		end_time endTime,
+		exclude_card_type excludeCardType,
+		store_codes storeCodes,
+		sup_title supTitle,
+		sup_content supContent,
+		sales_performance salesPerformance,
+		sales_qty salesQty,
+		is_price_rate isPriceRate,
+		price_rate priceRate,
+		display_area displayArea,
+		status,
+		push_status
+		pushStatus,
+		audit_status auditStatus,
+		audit_edit_status auditEditStatus,
+		mc_status mcStatus,
+		mc_edit_status mcEditStatus,
+		dm_status dmStatus,
+		layout_needs_status layoutNeedsStatus,
+		layout_needs_content layoutNeedsContent,
+		remarks,
+		north_rule_out
+		northRuleOut,
+		has_edit hasEdit,
+		audit_opinion auditOpinion,
+		expiry_status expiryStatus,
+		apply_id applyId,
+		apply_time applyTime,
+		audit_id auditId,
+		audit_time auditTime,
+		create_id createId,
+		create_time
+		createTime,
+		update_id updateId,
+		update_time updateTime,
+		cancel_id
+		cancelId,
+		cancel_time cancelTime,
+		is_north isNorth,
+		north_rule_out
+		northRuleOut,
+		buy_limit buyLimit
+	</sql>
+
+
+	<select id="queryActivityById" parameterType="java.lang.Long"
+		resultMap="activity">
+		select
+		<include refid="activity_all_field" />
+		from activity where id=#{id};
+	</select>
+
+	
+</mapper>
